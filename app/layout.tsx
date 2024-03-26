@@ -9,9 +9,9 @@ import Header from "@/components/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "William McGonagle",
+  title: "Georgetown Disruptive Tech",
   description:
-    "This is Will's portfolio website, which has projects, contact information, and information about me: William McGonagle.",
+    "Georgetown Disruptive Technology is the leading technology-oriented club at Georgetown University. Our goal is to provide students with the resources they need to succeed in the ever-changing world of technology. From programming to cyber security, we offer a wide range of workshops and events to help you stay ahead of the curve.",
 };
 
 export default function RootLayout({
