@@ -17,8 +17,17 @@ import * as fs from "fs";
 import * as path from "path";
 import YAML from "yaml";
 import { Globe, Magnet } from "lucide-react";
+import { findPortfolio } from "@/lib/find";
 
-export default async function JobPage({
+export async function generateStaticParams() {
+  const portfolio = findPortfolio();
+
+  return portfolio.map((item) => {
+    slug: item.slug;
+  });
+}
+
+export default async function PortfolioPage({
   params,
 }: {
   params: { slug: string };

@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const Footer = () => {
   // const programs = require("../../data/programs.json").programs;
+  // @ts-ignore
   const programs = [];
 
   return (
@@ -156,18 +157,21 @@ const Footer = () => {
 
               <nav aria-label="Footer Navigation - Services" className="mt-6">
                 <ul className="space-y-4 text-sm">
-                  {programs
-                    .filter((n, i) => i < 4)
-                    .map((program) => (
-                      <li>
-                        <Link
-                          href={`/projects/${program.slug}`}
-                          className="text-gray-700 transition hover:opacity-75"
-                        >
-                          {program.title}
-                        </Link>
-                      </li>
-                    ))}
+                  {
+                    // @ts-ignore
+                    programs
+                      .filter((n, i) => i < 4)
+                      .map((program, i) => (
+                        <li key={i}>
+                          <Link
+                            href={`/projects/${program.slug}`}
+                            className="text-gray-700 transition hover:opacity-75"
+                          >
+                            {program.title}
+                          </Link>
+                        </li>
+                      ))
+                  }
                 </ul>
               </nav>
             </div>

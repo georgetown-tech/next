@@ -14,6 +14,15 @@ import JobPreview from "@/components/job-preview";
 import * as fs from "fs";
 import * as path from "path";
 import YAML from "yaml";
+import { findJobs } from "@/lib/find";
+
+export async function generateStaticParams() {
+  const jobs = findJobs();
+
+  return jobs.map((job) => {
+    slug: job.slug;
+  });
+}
 
 export default async function JobPage({
   params,
